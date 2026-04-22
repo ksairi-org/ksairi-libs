@@ -1,5 +1,5 @@
-import { useHasValueBecomeFalsy } from "@react-hooks";
-import { performLayoutAnimation } from "@react-native-functions";
+import { useHasValueBecomeFalsy } from "@ksairi-org/react-hooks";
+import { performLayoutAnimation } from "@ksairi-org/react-native-functions";
 
 /**
  * @param value value to animate when becomes falsy

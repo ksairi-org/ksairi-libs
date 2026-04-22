@@ -1,7 +1,7 @@
 import type { GetProps } from "tamagui";
 
 import { styled, ThemeableStack } from "tamagui";
-import { useAutoHitSlop } from "@react-native-hooks";
+import { useAutoHitSlop } from "@ksairi-org/react-native-hooks";
 import { ComponentRef } from "react";
 
 const StyledBaseTouchable = styled(ThemeableStack, {

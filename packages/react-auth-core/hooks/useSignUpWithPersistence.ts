@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
 import { SignUpWithPasswordCredentials } from "@supabase/supabase-js";
-import { supabase } from "@react-auth-client";
+import { supabase } from "@ksairi-org/react-auth-client";
 
 type SignUpData = {
   firstName?: string;

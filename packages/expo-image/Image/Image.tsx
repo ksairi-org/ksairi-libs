@@ -13,8 +13,8 @@ import { Image as UnstyledExpoImage } from "expo-image";
 import { styled } from "tamagui";
 
 import { Error } from "../Error";
-import { getImageDimensions } from "@react-native-functions";
-import { useFontScale } from "@react-native-hooks";
+import { getImageDimensions } from "@ksairi-org/react-native-functions";
+import { useFontScale } from "@ksairi-org/react-native-hooks";
 import DEFAULT_NO_IMAGE from "../files/example.jpg";
 
 const StyledExpoImage = styled(UnstyledExpoImage, {});

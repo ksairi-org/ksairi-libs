@@ -1,9 +1,15 @@
 {
   "name": "@ksairi-org/typescript-functions",
-  "version": "0.1.0",
-  "description": "Typed utility functions — part of @ksairi-org/* libs",
+  "version": "0.1.1",
+  "description": "Typed utility functions \u2014 part of @ksairi-org/* libs",
   "main": "./index.ts",
   "types": "./index.ts",
-  "files": ["*.ts", "**/*.ts", "!**/*.test.*"],
-  "publishConfig": { "access": "public" }
+  "files": [
+    "*.ts",
+    "**/*.ts",
+    "!**/*.test.*"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }

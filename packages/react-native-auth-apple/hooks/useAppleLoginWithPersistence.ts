@@ -1,4 +1,4 @@
-import { useLoginWithPersistence } from "@react-auth-core";
+import { useLoginWithPersistence } from "@ksairi-org/react-auth-core";
 import { useCallback } from "react";
 import { AppleHandledSignInResponse } from "../types";
 import { useUserStore } from "@stores";

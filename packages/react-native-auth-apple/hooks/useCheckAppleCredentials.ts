@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 import AppleAuth from "@invertase/react-native-apple-authentication";
-import { useAuthStore } from "@react-auth-storage";
+import { useAuthStore } from "@ksairi-org/react-auth-storage";
 
 /**
  * This hook listens for when Apple credentials have been revoked.

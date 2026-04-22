@@ -5,7 +5,7 @@ import { shallow } from "zustand/shallow";
 import { createWithEqualityFn } from "zustand/traditional";
 
 import { createZustandMmkvStorage } from "../utils/createZustandMmkvStorage";
-import { supabase } from "@react-auth-client";
+import { supabase } from "@ksairi-org/react-auth-client";
 
 const SESSION_STORAGE_NAME = "auth-storage";
 

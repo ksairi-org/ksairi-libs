@@ -1,5 +1,5 @@
-import { useHasValueChanged } from "@react-hooks";
-import { performLayoutAnimation } from "@react-native-functions";
+import { useHasValueChanged } from "@ksairi-org/react-hooks";
+import { performLayoutAnimation } from "@ksairi-org/react-native-functions";
 
 /**
  * @param value value to animate on change

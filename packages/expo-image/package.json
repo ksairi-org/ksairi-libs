@@ -1,10 +1,21 @@
 {
   "name": "@ksairi-org/expo-image",
-  "version": "0.1.0",
-  "description": "Expo image wrapper — part of @ksairi-org/* libs",
+  "version": "0.1.1",
+  "description": "Expo image wrapper \u2014 part of @ksairi-org/* libs",
   "main": "./index.ts",
   "types": "./index.ts",
-  "files": ["*.ts", "*.tsx", "**/*.ts", "**/*.tsx", "!**/*.test.*"],
-  "peerDependencies": { "expo-image": "*" },
-  "publishConfig": { "access": "public" }
+  "files": [
+    "*.ts",
+    "*.tsx",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.jpg",
+    "!**/*.test.*"
+  ],
+  "peerDependencies": {
+    "expo-image": "*"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }

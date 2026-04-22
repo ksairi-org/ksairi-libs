@@ -1,4 +1,4 @@
-import { useAuthStore } from "@react-auth-storage";
+import { useAuthStore } from "@ksairi-org/react-auth-storage";
 
 /**
  * @returns The authentication status of the user

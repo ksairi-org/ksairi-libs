@@ -1,4 +1,4 @@
-import { useLoginWithPersistence } from "@react-auth-core";
+import { useLoginWithPersistence } from "@ksairi-org/react-auth-core";
 import { useCallback } from "react";
 import { useUserStore } from "@stores";
 import { SignInResponse } from "@react-native-google-signin/google-signin";

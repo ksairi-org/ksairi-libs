@@ -1,14 +1,22 @@
 {
   "name": "@ksairi-org/ui-touchables",
-  "version": "0.1.0",
-  "description": "Touchable components — part of @ksairi-org/* libs",
+  "version": "0.1.1",
+  "description": "Touchable components \u2014 part of @ksairi-org/* libs",
   "main": "./index.ts",
   "types": "./index.ts",
-  "files": ["*.ts", "*.tsx", "**/*.ts", "**/*.tsx", "!**/*.test.*"],
+  "files": [
+    "*.ts",
+    "*.tsx",
+    "**/*.ts",
+    "**/*.tsx",
+    "!**/*.test.*"
+  ],
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
     "tamagui": "*"
   },
-  "publishConfig": { "access": "public" }
+  "publishConfig": {
+    "access": "public"
+  }
 }

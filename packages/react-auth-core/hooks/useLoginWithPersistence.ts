@@ -6,9 +6,9 @@ import {
 
 import { useCallback, useEffect, useState } from "react";
 
-import { useAuthStore } from "@react-auth-storage";
-import { supabase } from "@react-auth-client";
-import { useAddProfileIfNeeded } from "@react-auth-hooks";
+import { useAuthStore } from "@ksairi-org/react-auth-storage";
+import { supabase } from "@ksairi-org/react-auth-client";
+import { useAddProfileIfNeeded } from "@ksairi-org/react-auth-hooks";
 
 type Status = "idle" | "loading" | "error" | "success";
 

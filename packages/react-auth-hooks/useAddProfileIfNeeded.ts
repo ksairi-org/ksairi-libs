@@ -3,10 +3,21 @@ import {
   getProfiles,
   Profiles,
   usePostProfiles,
-} from "@react-query-sdk";
+} from "@ksairi-org/react-query-sdk";
 import { useQueryClient } from "@tanstack/react-query";
-import { getQueryFilters } from "@utils";
 import { useCallback, useState } from "react";
+
+const getQueryFilters = (fieldFilters: Record<string, unknown>) => {
+  const validEntries = Object.entries(fieldFilters).filter(
+    (entry): entry is [string, NonNullable<string | number>] => {
+      const [, value] = entry;
+      return value !== null && value !== undefined;
+    },
+  );
+  return validEntries.length > 0
+    ? Object.fromEntries(validEntries.map(([key, value]) => [key, `eq.${value}`]))
+    : undefined;
+};
 
 const getErrorMessage = (error: unknown) => {
   if (error instanceof Error) {

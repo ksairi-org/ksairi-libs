@@ -1,5 +1,5 @@
 import type { AxiosInstance, InternalAxiosRequestConfig } from "axios";
-import { useAuthStore } from "@react-auth-storage";
+import { useAuthStore } from "@ksairi-org/react-auth-storage";
 
 type RequestInterceptor = AxiosInstance["interceptors"]["request"];
 type ResponseInterceptor = AxiosInstance["interceptors"]["response"];

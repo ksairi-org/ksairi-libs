@@ -1,5 +1,5 @@
-import { setupAxiosInterceptors } from "@react-auth-setup";
-import { useAuthStore } from "@react-auth-storage";
+import { setupAxiosInterceptors } from "@ksairi-org/react-auth-setup";
+import { useAuthStore } from "@ksairi-org/react-auth-storage";
 import type { AxiosError, AxiosRequestConfig } from "axios";
 import axios from "axios";
 import { functionsUrlSuffix } from "./constants";
