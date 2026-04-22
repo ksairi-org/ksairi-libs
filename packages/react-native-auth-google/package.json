@@ -1,0 +1,14 @@
+{
+  "name": "@ksairi/react-native-auth-google",
+  "version": "0.1.0",
+  "description": "Google Sign In for React Native — part of @ksairi/* libs",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "files": ["*.ts", "*.tsx", "**/*.ts", "**/*.tsx", "!**/*.test.*"],
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*",
+    "@react-native-google-signin/google-signin": "*"
+  },
+  "publishConfig": { "access": "public" }
+}

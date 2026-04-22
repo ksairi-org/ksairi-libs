@@ -1,0 +1,14 @@
+{
+  "name": "@ksairi/react-query-sdk",
+  "version": "0.1.0",
+  "description": "React Query SDK (generated) — part of @ksairi/* libs",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "files": ["*.ts", "**/*.ts", "!**/*.test.*"],
+  "peerDependencies": {
+    "react": "*",
+    "@tanstack/react-query": "*",
+    "axios": "*"
+  },
+  "publishConfig": { "access": "public" }
+}

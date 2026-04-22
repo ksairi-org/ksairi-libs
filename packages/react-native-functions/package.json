@@ -1,0 +1,13 @@
+{
+  "name": "@ksairi/react-native-functions",
+  "version": "0.1.0",
+  "description": "React Native utility functions — part of @ksairi/* libs",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "files": ["*.ts", "**/*.ts", "!**/*.test.*"],
+  "peerDependencies": {
+    "react-native": "*",
+    "react-native-reanimated": "*"
+  },
+  "publishConfig": { "access": "public" }
+}

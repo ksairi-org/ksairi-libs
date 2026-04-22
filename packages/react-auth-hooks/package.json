@@ -1,0 +1,10 @@
+{
+  "name": "@ksairi/react-auth-hooks",
+  "version": "0.1.0",
+  "description": "Auth utility hooks — part of @ksairi/* libs",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "files": ["*.ts", "**/*.ts", "!**/*.test.*"],
+  "peerDependencies": { "react": "*" },
+  "publishConfig": { "access": "public" }
+}

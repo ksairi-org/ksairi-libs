@@ -1,0 +1,10 @@
+{
+  "name": "@ksairi/react-auth-core",
+  "version": "0.1.0",
+  "description": "Core auth hooks — part of @ksairi/* libs",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "files": ["*.ts", "**/*.ts", "!**/*.test.*"],
+  "peerDependencies": { "react": "*" },
+  "publishConfig": { "access": "public" }
+}

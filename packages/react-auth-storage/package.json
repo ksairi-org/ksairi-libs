@@ -1,0 +1,14 @@
+{
+  "name": "@ksairi/react-auth-storage",
+  "version": "0.1.0",
+  "description": "Auth storage store — part of @ksairi/* libs",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "files": ["*.ts", "**/*.ts", "!**/*.test.*"],
+  "peerDependencies": {
+    "react": "*",
+    "react-native-mmkv": "*",
+    "zustand": "*"
+  },
+  "publishConfig": { "access": "public" }
+}

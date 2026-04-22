@@ -1,0 +1,14 @@
+{
+  "name": "@ksairi/react-native-ui-config",
+  "version": "0.1.0",
+  "description": "UI config hooks and utilities — part of @ksairi/* libs",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "files": ["*.ts", "**/*.ts", "!**/*.test.*"],
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*",
+    "tamagui": "*"
+  },
+  "publishConfig": { "access": "public" }
+}

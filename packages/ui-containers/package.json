@@ -1,0 +1,14 @@
+{
+  "name": "@ksairi/ui-containers",
+  "version": "0.1.0",
+  "description": "Screen container components — part of @ksairi/* libs",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "files": ["*.ts", "*.tsx", "**/*.ts", "**/*.tsx", "!**/*.test.*"],
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*",
+    "tamagui": "*"
+  },
+  "publishConfig": { "access": "public" }
+}
