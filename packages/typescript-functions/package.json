@@ -1,7 +1,7 @@
 {
-  "name": "@ksairi/typescript-functions",
+  "name": "@ksairi-org/typescript-functions",
   "version": "0.1.0",
-  "description": "Typed utility functions — part of @ksairi/* libs",
+  "description": "Typed utility functions — part of @ksairi-org/* libs",
   "main": "./index.ts",
   "types": "./index.ts",
   "files": ["*.ts", "**/*.ts", "!**/*.test.*"],

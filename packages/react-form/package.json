@@ -1,7 +1,7 @@
 {
-  "name": "@ksairi/react-form",
+  "name": "@ksairi-org/react-form",
   "version": "0.1.0",
-  "description": "Form component wrapper — part of @ksairi/* libs",
+  "description": "Form component wrapper — part of @ksairi-org/* libs",
   "main": "./index.ts",
   "types": "./index.ts",
   "files": ["*.ts", "*.tsx", "**/*.ts", "**/*.tsx", "!**/*.test.*"],

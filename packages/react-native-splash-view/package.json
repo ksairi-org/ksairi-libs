@@ -1,7 +1,7 @@
 {
-  "name": "@ksairi/react-native-splash-view",
+  "name": "@ksairi-org/react-native-splash-view",
   "version": "0.1.0",
-  "description": "Splash screen view component — part of @ksairi/* libs",
+  "description": "Splash screen view component — part of @ksairi-org/* libs",
   "main": "./index.ts",
   "types": "./index.ts",
   "files": ["*.ts", "*.tsx", "**/*.ts", "**/*.tsx", "!**/*.test.*"],

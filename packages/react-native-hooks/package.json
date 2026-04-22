@@ -1,7 +1,7 @@
 {
-  "name": "@ksairi/react-native-hooks",
+  "name": "@ksairi-org/react-native-hooks",
   "version": "0.1.0",
-  "description": "React Native hooks — part of @ksairi/* libs",
+  "description": "React Native hooks — part of @ksairi-org/* libs",
   "main": "./index.ts",
   "types": "./index.ts",
   "files": ["*.ts", "**/*.ts", "!**/*.test.*"],

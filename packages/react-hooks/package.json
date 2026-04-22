@@ -1,7 +1,7 @@
 {
-  "name": "@ksairi/react-hooks",
+  "name": "@ksairi-org/react-hooks",
   "version": "0.1.0",
-  "description": "Generic React hooks — part of @ksairi/* libs",
+  "description": "Generic React hooks — part of @ksairi-org/* libs",
   "main": "./index.ts",
   "types": "./index.ts",
   "files": ["*.ts", "**/*.ts", "!**/*.test.*"],

@@ -1,7 +1,7 @@
 {
-  "name": "@ksairi/react-native-auth-apple",
+  "name": "@ksairi-org/react-native-auth-apple",
   "version": "0.1.0",
-  "description": "Apple Sign In for React Native — part of @ksairi/* libs",
+  "description": "Apple Sign In for React Native — part of @ksairi-org/* libs",
   "main": "./index.ts",
   "types": "./index.ts",
   "files": ["*.ts", "*.tsx", "**/*.ts", "**/*.tsx", "!**/*.test.*"],

@@ -1,7 +1,7 @@
 {
-  "name": "@ksairi/ui-containers",
+  "name": "@ksairi-org/ui-containers",
   "version": "0.1.0",
-  "description": "Screen container components — part of @ksairi/* libs",
+  "description": "Screen container components — part of @ksairi-org/* libs",
   "main": "./index.ts",
   "types": "./index.ts",
   "files": ["*.ts", "*.tsx", "**/*.ts", "**/*.tsx", "!**/*.test.*"],

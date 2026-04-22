@@ -1,7 +1,7 @@
 {
-  "name": "@ksairi/react-auth-storage",
+  "name": "@ksairi-org/react-auth-storage",
   "version": "0.1.0",
-  "description": "Auth storage store — part of @ksairi/* libs",
+  "description": "Auth storage store — part of @ksairi-org/* libs",
   "main": "./index.ts",
   "types": "./index.ts",
   "files": ["*.ts", "**/*.ts", "!**/*.test.*"],

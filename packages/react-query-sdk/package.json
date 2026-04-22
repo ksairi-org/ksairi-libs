@@ -1,7 +1,7 @@
 {
-  "name": "@ksairi/react-query-sdk",
+  "name": "@ksairi-org/react-query-sdk",
   "version": "0.1.0",
-  "description": "React Query SDK (generated) — part of @ksairi/* libs",
+  "description": "React Query SDK (generated) — part of @ksairi-org/* libs",
   "main": "./index.ts",
   "types": "./index.ts",
   "files": ["*.ts", "**/*.ts", "!**/*.test.*"],

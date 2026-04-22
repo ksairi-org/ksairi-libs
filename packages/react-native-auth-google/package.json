@@ -1,7 +1,7 @@
 {
-  "name": "@ksairi/react-native-auth-google",
+  "name": "@ksairi-org/react-native-auth-google",
   "version": "0.1.0",
-  "description": "Google Sign In for React Native — part of @ksairi/* libs",
+  "description": "Google Sign In for React Native — part of @ksairi-org/* libs",
   "main": "./index.ts",
   "types": "./index.ts",
   "files": ["*.ts", "*.tsx", "**/*.ts", "**/*.tsx", "!**/*.test.*"],
