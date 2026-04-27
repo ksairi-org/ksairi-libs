@@ -1,2 +1,2 @@
 # libs
-Shared libraries for ksairi-org projects — published under @ksairi/* on npm
+Shared libraries for ksairi-org projects — published under @ksairi-org/* on npm
