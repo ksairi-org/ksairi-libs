@@ -14,38 +14,13 @@ import { getTokenValue } from "tamagui";
 import { ThrottledButton } from "@ksairi-org/ui-touchables";
 import { CircularLoadingSpinner } from "../CircularLoadingSpinner";
 
-type AnimatedButtonVariant = "primary" | "secondary" | "tertiary";
-
-const variantBackgroundColors: Record<AnimatedButtonVariant, ColorTokens> = {
-  primary: "$surface-invert",
-  secondary: "$surface-primary",
-  tertiary: "$surface-secondary",
-};
-
-const variantSpinnerColors: Record<
-  AnimatedButtonVariant,
-  { background: ColorTokens; piece: ColorTokens }
-> = {
-  primary: {
-    background: "$background-action",
-    piece: "$text-body",
-  },
-  secondary: {
-    background: "$background-action",
-    piece: "$text-body",
-  },
-  tertiary: {
-    background: "$background-action",
-    piece: "$text-body",
-  },
-};
-
 type AnimatedButtonProps = {
   width: number;
   height?: number;
   padding?: Token;
-  backgroundColor?: ColorTokens;
-  variant?: AnimatedButtonVariant;
+  backgroundColor: ColorTokens;
+  spinnerBackgroundColor?: ColorTokens;
+  spinnerPieceColor?: ColorTokens;
   disabled?: boolean;
   loading?: boolean;
   opacity?: number;
@@ -62,7 +37,8 @@ const AnimatedButton = ({
   height,
   padding,
   backgroundColor,
-  variant,
+  spinnerBackgroundColor,
+  spinnerPieceColor,
   disabled,
   loading,
   opacity,
@@ -71,12 +47,6 @@ const AnimatedButton = ({
   style,
   children,
 }: AnimatedButtonProps) => {
-  const resolvedBackgroundColor =
-    backgroundColor ?? (variant ? variantBackgroundColors[variant] : "$surface-invert");
-  const spinnerColors = variant
-    ? variantSpinnerColors[variant]
-    : variantSpinnerColors.primary;
-
   const scale = useSharedValue(1);
   const buttonWidth = useSharedValue(width);
   const buttonOpacity = useSharedValue(opacity ?? (disabled ? 0.1 : 1));
@@ -105,7 +75,7 @@ const AnimatedButton = ({
         borderRadius={"$full"}
         justifyContent={"center"}
         alignItems={"center"}
-        backgroundColor={resolvedBackgroundColor}
+        backgroundColor={backgroundColor}
         height={height}
         padding={padding && getTokenValue(padding)}
         disabled={disabled}
@@ -121,8 +91,8 @@ const AnimatedButton = ({
         {loading ? (
           <CircularLoadingSpinner
             size={"$2xl"}
-            backgroundColor={spinnerColors.background}
-            spinningPieceColor={spinnerColors.piece}
+            backgroundColor={spinnerBackgroundColor ?? backgroundColor}
+            spinningPieceColor={spinnerPieceColor ?? backgroundColor}
           />
         ) : (
           <Animated.View style={animateTextScaleStyle}>{children}</Animated.View>
@@ -133,4 +103,4 @@ const AnimatedButton = ({
 };
 
 export { AnimatedButton };
-export type { AnimatedButtonProps, AnimatedButtonVariant };
+export type { AnimatedButtonProps };
