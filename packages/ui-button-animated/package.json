@@ -1,7 +1,7 @@
 {
-  "name": "@ksairi-org/ui-touchables",
-  "version": "0.1.1",
-  "description": "Touchable components — part of @ksairi-org/* libs",
+  "name": "@ksairi-org/ui-button-animated",
+  "version": "0.1.0",
+  "description": "Animated button primitives — part of @ksairi-org/* libs",
   "main": "./index.ts",
   "types": "./index.ts",
   "files": [
@@ -12,8 +12,11 @@
     "!**/*.test.*"
   ],
   "peerDependencies": {
+    "@ksairi-org/react-native-ui-config": "*",
+    "@ksairi-org/ui-touchables": "*",
     "react": "*",
     "react-native": "*",
+    "react-native-reanimated": "*",
     "tamagui": "*"
   },
   "publishConfig": {

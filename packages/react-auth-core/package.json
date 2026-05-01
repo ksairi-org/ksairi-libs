@@ -1,7 +1,7 @@
 {
   "name": "@ksairi-org/react-auth-core",
   "version": "0.1.1",
-  "description": "Core auth hooks \u2014 part of @ksairi-org/* libs",
+  "description": "Core auth hooks — part of @ksairi-org/* libs",
   "main": "./index.ts",
   "types": "./index.ts",
   "files": [

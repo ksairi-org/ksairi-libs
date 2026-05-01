@@ -1,7 +1,7 @@
 {
   "name": "@ksairi-org/react-native-hooks",
   "version": "0.1.1",
-  "description": "React Native hooks \u2014 part of @ksairi-org/* libs",
+  "description": "React Native hooks — part of @ksairi-org/* libs",
   "main": "./index.ts",
   "types": "./index.ts",
   "files": [
@@ -10,9 +10,9 @@
     "!**/*.test.*"
   ],
   "peerDependencies": {
+    "@react-native-community/netinfo": "*",
     "react": "*",
-    "react-native": "*",
-    "@react-native-community/netinfo": "*"
+    "react-native": "*"
   },
   "publishConfig": {
     "access": "public"

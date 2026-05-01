@@ -1,7 +1,7 @@
 {
-  "name": "@ksairi-org/ui-touchables",
-  "version": "0.1.1",
-  "description": "Touchable components — part of @ksairi-org/* libs",
+  "name": "@ksairi-org/ui-action-buttons",
+  "version": "0.1.0",
+  "description": "Action button layout container — part of @ksairi-org/* libs",
   "main": "./index.ts",
   "types": "./index.ts",
   "files": [
@@ -12,6 +12,7 @@
     "!**/*.test.*"
   ],
   "peerDependencies": {
+    "@ksairi-org/ui-containers": "*",
     "react": "*",
     "react-native": "*",
     "tamagui": "*"

@@ -1,7 +1,7 @@
 {
   "name": "@ksairi-org/react-native-splash-view",
   "version": "0.1.1",
-  "description": "Splash screen view component \u2014 part of @ksairi-org/* libs",
+  "description": "Splash screen view component — part of @ksairi-org/* libs",
   "main": "./index.ts",
   "types": "./index.ts",
   "files": [
@@ -12,9 +12,9 @@
     "!**/*.test.*"
   ],
   "peerDependencies": {
+    "expo-splash-screen": "*",
     "react": "*",
-    "react-native": "*",
-    "expo-splash-screen": "*"
+    "react-native": "*"
   },
   "publishConfig": {
     "access": "public"

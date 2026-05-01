@@ -1,7 +1,7 @@
 {
   "name": "@ksairi-org/react-native-functions",
   "version": "0.1.1",
-  "description": "React Native utility functions \u2014 part of @ksairi-org/* libs",
+  "description": "React Native utility functions — part of @ksairi-org/* libs",
   "main": "./index.ts",
   "types": "./index.ts",
   "files": [

@@ -1,7 +1,7 @@
 {
   "name": "@ksairi-org/react-auth-hooks",
   "version": "0.1.2",
-  "description": "Auth utility hooks \u2014 part of @ksairi-org/* libs",
+  "description": "Auth utility hooks — part of @ksairi-org/* libs",
   "main": "./index.ts",
   "types": "./index.ts",
   "files": [

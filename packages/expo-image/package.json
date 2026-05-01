@@ -1,7 +1,7 @@
 {
   "name": "@ksairi-org/expo-image",
   "version": "0.1.1",
-  "description": "Expo image wrapper \u2014 part of @ksairi-org/* libs",
+  "description": "Expo image wrapper — part of @ksairi-org/* libs",
   "main": "./index.ts",
   "types": "./index.ts",
   "files": [

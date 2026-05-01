@@ -1,7 +1,7 @@
 {
   "name": "@ksairi-org/react-auth-client",
   "version": "0.1.1",
-  "description": "Auth client (Supabase) \u2014 part of @ksairi-org/* libs",
+  "description": "Auth client (Supabase) — part of @ksairi-org/* libs",
   "main": "./index.ts",
   "types": "./index.ts",
   "files": [

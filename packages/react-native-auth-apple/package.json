@@ -1,7 +1,7 @@
 {
   "name": "@ksairi-org/react-native-auth-apple",
   "version": "0.1.1",
-  "description": "Apple Sign In for React Native \u2014 part of @ksairi-org/* libs",
+  "description": "Apple Sign In for React Native — part of @ksairi-org/* libs",
   "main": "./index.ts",
   "types": "./index.ts",
   "files": [
@@ -12,9 +12,9 @@
     "!**/*.test.*"
   ],
   "peerDependencies": {
+    "@invertase/react-native-apple-authentication": "*",
     "react": "*",
-    "react-native": "*",
-    "@invertase/react-native-apple-authentication": "*"
+    "react-native": "*"
   },
   "publishConfig": {
     "access": "public"

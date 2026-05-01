@@ -1,7 +1,7 @@
 {
   "name": "@ksairi-org/react-form",
   "version": "0.1.1",
-  "description": "Form component wrapper \u2014 part of @ksairi-org/* libs",
+  "description": "Form component wrapper — part of @ksairi-org/* libs",
   "main": "./index.ts",
   "types": "./index.ts",
   "files": [
@@ -12,9 +12,9 @@
     "!**/*.test.*"
   ],
   "peerDependencies": {
+    "@hookform/resolvers": "*",
     "react": "*",
-    "react-hook-form": "*",
-    "@hookform/resolvers": "*"
+    "react-hook-form": "*"
   },
   "publishConfig": {
     "access": "public"
