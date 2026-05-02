@@ -1,16 +1,17 @@
 import { useState, useCallback, Children, isValidElement } from "react";
-
 import type { LayoutChangeEvent } from "react-native";
 import { useWindowDimensions } from "react-native";
-
 import { ScrollView, styled, YStackProps } from "tamagui";
 import { GlassContainer, GlassContainerProps } from "expo-glass-effect";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+import type { Edge } from "react-native-safe-area-context";
 
 type ScreenXGlassContainerProps = Pick<
   YStackProps,
   "children" | "backgroundColor"
 > & {
   shouldAutoResize?: boolean;
+  edges?: Edge[];
 } & GlassContainerProps;
 
 type VerticalGlassContainerProps = Omit<YStackProps, "flexDirection">;
@@ -21,43 +22,20 @@ const validGlassComponents = [
   "ScreenXGlassSubContainer",
 ];
 
-/**
- * Check if a component is a GlassView or wraps a GlassView
- */
 const isGlassViewOrWrapper = (element: React.ReactElement): boolean => {
   const { type } = element;
-  // Direct GlassView
-  if (type === "GlassView") {
-    return true;
-  }
-
-  // Check if it's a styled component wrapping GlassView
+  if (type === "GlassView") return true;
   // @ts-expect-error - accessing internal styled component properties
-  if (validGlassComponents.includes(type?.staticConfig?.componentName)) {
-    return true;
-  }
-
-  // Check if component name suggests it's a GlassView wrapper
+  if (validGlassComponents.includes(type?.staticConfig?.componentName)) return true;
   // @ts-expect-error - accessing type name
   const componentName = type?.displayName || type?.name || "";
-  if (validGlassComponents.includes(componentName)) {
-    return true;
-  }
-
-  return false;
+  return validGlassComponents.includes(componentName);
 };
 
-/**
- * Validates that all children are GlassView components
- */
 const validateGlassViewChildren = (children: React.ReactNode) => {
-  const childArray = Children.toArray(children);
-
-  childArray.forEach((child, index) => {
+  Children.toArray(children).forEach((child, index) => {
     if (!isValidElement(child)) {
-      throw new Error(
-        `Child at index ${index} is not a valid React element. All children must be GlassView components.`,
-      );
+      throw new Error(`Child at index ${index} is not a valid React element. All children must be GlassView components.`);
     }
     if (!isGlassViewOrWrapper(child)) {
       throw new Error(
@@ -74,27 +52,26 @@ const HorizontalGlassContainer = (props: VerticalGlassContainerProps) => (
   </StyledGlassContainer>
 );
 
-/**
- *
- * @param props props
- * @param props.children content to show within the container
- * @param props.backgroundColor container's background color
- * @param props.shouldAutoResize should the container auto resize if the height of the children is larger than the screen height
- * @returns JSX container containing its children
- */
+const ALL_EDGES: Edge[] = ["top", "bottom", "left", "right"];
+
 const ScreenXGlassContainer = ({
   children,
   shouldAutoResize = true,
   backgroundColor,
+  edges = ALL_EDGES,
   ...props
 }: ScreenXGlassContainerProps) => {
   const [contentHeight, setContentHeight] = useState<null | number>(null);
   const screenHeight = useWindowDimensions().height;
+  const insets = useSafeAreaInsets();
+
+  const pt = edges.includes("top") ? insets.top : 0;
+  const pb = edges.includes("bottom") ? insets.bottom : 0;
+  const pl = edges.includes("left") ? insets.left : 0;
+  const pr = edges.includes("right") ? insets.right : 0;
 
   const handleLayout = useCallback((event: LayoutChangeEvent) => {
-    const { height } = event.nativeEvent.layout;
-
-    setContentHeight(height);
+    setContentHeight(event.nativeEvent.layout.height);
   }, []);
 
   validateGlassViewChildren(children);
@@ -104,6 +81,10 @@ const ScreenXGlassContainer = ({
       <HorizontalGlassContainer
         backgroundColor={backgroundColor}
         flexGrow={1}
+        paddingTop={pt}
+        paddingBottom={pb}
+        paddingLeft={pl}
+        paddingRight={pr}
         {...props}
       >
         {children}
@@ -115,6 +96,10 @@ const ScreenXGlassContainer = ({
     return (
       <HorizontalGlassContainer
         backgroundColor={backgroundColor}
+        paddingTop={pt}
+        paddingBottom={pb}
+        paddingLeft={pl}
+        paddingRight={pr}
         onLayout={handleLayout}
         {...props}
       >
@@ -125,10 +110,13 @@ const ScreenXGlassContainer = ({
 
   if (contentHeight > screenHeight) {
     return (
-      <ScrollView backgroundColor={backgroundColor} flexGrow={1} horizontal>
-        <HorizontalGlassContainer {...props}>
-          {children}
-        </HorizontalGlassContainer>
+      <ScrollView
+        backgroundColor={backgroundColor}
+        flexGrow={1}
+        horizontal
+        contentContainerStyle={{ paddingTop: pt, paddingBottom: pb, paddingLeft: pl, paddingRight: pr }}
+      >
+        <HorizontalGlassContainer {...props}>{children}</HorizontalGlassContainer>
       </ScrollView>
     );
   }
@@ -137,6 +125,10 @@ const ScreenXGlassContainer = ({
     <HorizontalGlassContainer
       backgroundColor={backgroundColor}
       flexGrow={1}
+      paddingTop={pt}
+      paddingBottom={pb}
+      paddingLeft={pl}
+      paddingRight={pr}
       {...props}
     >
       {children}
@@ -145,5 +137,4 @@ const ScreenXGlassContainer = ({
 };
 
 export { ScreenXGlassContainer };
-
 export type { ScreenXGlassContainerProps };

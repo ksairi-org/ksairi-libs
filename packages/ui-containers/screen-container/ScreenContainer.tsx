@@ -1,44 +1,47 @@
 import type { YStackProps } from "tamagui";
-
 import { useState, useCallback } from "react";
-
 import type { LayoutChangeEvent } from "react-native";
 import { useWindowDimensions } from "react-native";
-
 import { YStack, ScrollView } from "tamagui";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+import type { Edge } from "react-native-safe-area-context";
 
-type ScreenContainerProps = Pick<
-  YStackProps,
-  "children" | "backgroundColor"
-> & {
+type ScreenContainerProps = Pick<YStackProps, "children" | "backgroundColor"> & {
   shouldAutoResize?: boolean;
+  edges?: Edge[];
 };
 
-/**
- *
- * @param props props
- * @param props.children content to show within the container
- * @param props.backgroundColor container's background color
- * @param props.shouldAutoResize should the container auto resize if the height of the children is larger than the screen height
- * @returns JSX container containing its children
- */
+const ALL_EDGES: Edge[] = ["top", "bottom", "left", "right"];
+
 const ScreenContainer = ({
   children,
   shouldAutoResize = true,
   backgroundColor,
+  edges = ALL_EDGES,
 }: ScreenContainerProps) => {
   const [contentHeight, setContentHeight] = useState<null | number>(null);
   const screenHeight = useWindowDimensions().height;
+  const insets = useSafeAreaInsets();
+
+  const pt = edges.includes("top") ? insets.top : 0;
+  const pb = edges.includes("bottom") ? insets.bottom : 0;
+  const pl = edges.includes("left") ? insets.left : 0;
+  const pr = edges.includes("right") ? insets.right : 0;
 
   const handleLayout = useCallback((event: LayoutChangeEvent) => {
-    const { height } = event.nativeEvent.layout;
-
-    setContentHeight(height);
+    setContentHeight(event.nativeEvent.layout.height);
   }, []);
 
   if (!shouldAutoResize) {
     return (
-      <YStack backgroundColor={backgroundColor} flexGrow={1}>
+      <YStack
+        backgroundColor={backgroundColor}
+        flexGrow={1}
+        paddingTop={pt}
+        paddingBottom={pb}
+        paddingLeft={pl}
+        paddingRight={pr}
+      >
         {children}
       </YStack>
     );
@@ -46,7 +49,14 @@ const ScreenContainer = ({
 
   if (contentHeight === null) {
     return (
-      <YStack backgroundColor={backgroundColor} onLayout={handleLayout}>
+      <YStack
+        backgroundColor={backgroundColor}
+        paddingTop={pt}
+        paddingBottom={pb}
+        paddingLeft={pl}
+        paddingRight={pr}
+        onLayout={handleLayout}
+      >
         {children}
       </YStack>
     );
@@ -54,19 +64,29 @@ const ScreenContainer = ({
 
   if (contentHeight > screenHeight) {
     return (
-      <ScrollView backgroundColor={backgroundColor} flexGrow={1}>
+      <ScrollView
+        backgroundColor={backgroundColor}
+        flexGrow={1}
+        contentContainerStyle={{ paddingTop: pt, paddingBottom: pb, paddingLeft: pl, paddingRight: pr }}
+      >
         {children}
       </ScrollView>
     );
   }
 
   return (
-    <YStack backgroundColor={backgroundColor} flexGrow={1}>
+    <YStack
+      backgroundColor={backgroundColor}
+      flexGrow={1}
+      paddingTop={pt}
+      paddingBottom={pb}
+      paddingLeft={pl}
+      paddingRight={pr}
+    >
       {children}
     </YStack>
   );
 };
 
 export { ScreenContainer };
-
 export type { ScreenContainerProps };
