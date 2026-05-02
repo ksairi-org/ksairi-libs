@@ -5,7 +5,6 @@ import { useAutoHitSlop } from "@ksairi-org/react-native-hooks";
 import { ComponentRef } from "react";
 
 const StyledBaseTouchable = styled(ThemeableStack, {
-  hoverTheme: true,
   pressTheme: false,
   focusTheme: false,
   pressStyle: {

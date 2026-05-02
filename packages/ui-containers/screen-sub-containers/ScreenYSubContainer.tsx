@@ -15,7 +15,7 @@ const ScreenYSubContainer = ({
   children,
   ...props
 }: ScreenSubYContainerProps) => (
-  <YStack {...props} paddingHorizontal={'$md'}>
+  <YStack {...props} px={'$md'}>
     {children}
   </YStack>
 );

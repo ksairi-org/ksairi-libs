@@ -1,6 +1,6 @@
 {
   "name": "@ksairi-org/ui-button-animated",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Animated button primitives — part of @ksairi-org/* libs",
   "main": "./index.ts",
   "types": "./index.ts",

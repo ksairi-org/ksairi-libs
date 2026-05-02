@@ -1,4 +1,4 @@
-import type { ColorTokens, Token } from "tamagui";
+import type { ColorTokens } from "tamagui";
 import type { ReactNode } from "react";
 import { useEffect } from "react";
 import type { StyleProp, ViewStyle } from "react-native";
@@ -17,7 +17,7 @@ import { CircularLoadingSpinner } from "../CircularLoadingSpinner";
 type AnimatedButtonProps = {
   width: number;
   height?: number;
-  padding?: Token;
+  padding?: string;
   backgroundColor: ColorTokens;
   spinnerBackgroundColor?: ColorTokens;
   spinnerPieceColor?: ColorTokens;
@@ -72,12 +72,12 @@ const AnimatedButton = ({
   return (
     <Animated.View style={[animateButtonStyle, style]}>
       <ThrottledButton
-        borderRadius={"$full"}
-        justifyContent={"center"}
-        alignItems={"center"}
+        br={"$full"}
+        justify={"center"}
+        items={"center"}
         backgroundColor={backgroundColor}
         height={height}
-        padding={padding && getTokenValue(padding)}
+        p={padding && getTokenValue(padding)}
         disabled={disabled}
         onPress={onPress}
         onPressIn={() => {

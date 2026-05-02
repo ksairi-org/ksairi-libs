@@ -15,7 +15,7 @@ const ScreenXSubContainer = ({
   children,
   ...props
 }: ScreenSubXContainerProps) => (
-  <XStack {...props} paddingHorizontal={'$md'}>
+  <XStack {...props} px={'$md'}>
     {children}
   </XStack>
 );

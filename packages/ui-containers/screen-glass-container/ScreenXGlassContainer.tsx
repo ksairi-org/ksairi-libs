@@ -1,15 +1,13 @@
 import { useState, useCallback, Children, isValidElement } from "react";
 import type { LayoutChangeEvent } from "react-native";
-import { useWindowDimensions } from "react-native";
-import { ScrollView, styled, YStackProps } from "tamagui";
+import { ScrollView, useWindowDimensions } from "react-native";
+import { styled, YStackProps } from "tamagui";
 import { GlassContainer, GlassContainerProps } from "expo-glass-effect";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import type { Edge } from "react-native-safe-area-context";
 
-type ScreenXGlassContainerProps = Pick<
-  YStackProps,
-  "children" | "backgroundColor"
-> & {
+type ScreenXGlassContainerProps = Pick<YStackProps, "children"> & {
+  backgroundColor?: YStackProps["backgroundColor"];
   shouldAutoResize?: boolean;
   edges?: Edge[];
 } & GlassContainerProps;
@@ -81,10 +79,10 @@ const ScreenXGlassContainer = ({
       <HorizontalGlassContainer
         backgroundColor={backgroundColor}
         flexGrow={1}
-        paddingTop={pt}
-        paddingBottom={pb}
-        paddingLeft={pl}
-        paddingRight={pr}
+        pt={pt}
+        pb={pb}
+        pl={pl}
+        pr={pr}
         {...props}
       >
         {children}
@@ -96,10 +94,10 @@ const ScreenXGlassContainer = ({
     return (
       <HorizontalGlassContainer
         backgroundColor={backgroundColor}
-        paddingTop={pt}
-        paddingBottom={pb}
-        paddingLeft={pl}
-        paddingRight={pr}
+        pt={pt}
+        pb={pb}
+        pl={pl}
+        pr={pr}
         onLayout={handleLayout}
         {...props}
       >
@@ -111,8 +109,7 @@ const ScreenXGlassContainer = ({
   if (contentHeight > screenHeight) {
     return (
       <ScrollView
-        backgroundColor={backgroundColor}
-        flexGrow={1}
+        style={{ flexGrow: 1 }}
         horizontal
         contentContainerStyle={{ paddingTop: pt, paddingBottom: pb, paddingLeft: pl, paddingRight: pr }}
       >
@@ -125,10 +122,10 @@ const ScreenXGlassContainer = ({
     <HorizontalGlassContainer
       backgroundColor={backgroundColor}
       flexGrow={1}
-      paddingTop={pt}
-      paddingBottom={pb}
-      paddingLeft={pl}
-      paddingRight={pr}
+      pt={pt}
+      pb={pb}
+      pl={pl}
+      pr={pr}
       {...props}
     >
       {children}

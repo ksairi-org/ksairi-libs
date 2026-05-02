@@ -7,12 +7,12 @@ import Animated, {
   withRepeat,
   Easing,
 } from "react-native-reanimated";
-import type { ColorTokens, Token } from "tamagui";
+import type { ColorTokens } from "tamagui";
 
 import { Circle } from "./Circle";
 
 type CircularLoadingSpinnerProps = {
-  size: Token;
+  size: string;
   thickness?: number;
   backgroundColor: ColorTokens;
   spinningPieceColor: ColorTokens;
