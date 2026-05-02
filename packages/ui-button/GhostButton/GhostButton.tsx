@@ -8,7 +8,6 @@ const GhostButton = ({ disabled, ...props }: GhostButtonProps) => (
     {...props}
     disabled={disabled}
     opacity={disabled ? 0.4 : props.opacity}
-    backgroundColor="transparent"
   />
 );
 

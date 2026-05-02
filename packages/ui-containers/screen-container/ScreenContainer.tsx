@@ -6,7 +6,8 @@ import { YStack, ScrollView } from "tamagui";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import type { Edge } from "react-native-safe-area-context";
 
-type ScreenContainerProps = Pick<YStackProps, "children" | "backgroundColor"> & {
+type ScreenContainerProps = Pick<YStackProps, "children"> & {
+  backgroundColor?: YStackProps["backgroundColor"];
   shouldAutoResize?: boolean;
   edges?: Edge[];
 };
