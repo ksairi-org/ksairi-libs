@@ -5,7 +5,7 @@ import type { LayoutChangeEvent } from "react-native";
 
 import { Button, type ButtonProps, Spacer, YStack } from "tamagui";
 
-type GenericButtonProps = Omit<
+type BaseButtonProps = Omit<
   ButtonProps,
   "unstyled" | "alignItems" | "textAlign"
 > & {
@@ -13,7 +13,7 @@ type GenericButtonProps = Omit<
   rightIcon?: ReactNode;
 };
 
-const ButtonWithoutIcons = ({ children, ...props }: GenericButtonProps) => (
+const ButtonWithoutIcons = ({ children, ...props }: BaseButtonProps) => (
   <Button {...props} unstyled={true} alignItems={"center"}>
     {children}
   </Button>
@@ -23,7 +23,7 @@ const ButtonWithLeftIcon = ({
   children,
   leftIcon,
   ...props
-}: GenericButtonProps & Required<Pick<GenericButtonProps, "leftIcon">>) => {
+}: BaseButtonProps & Required<Pick<BaseButtonProps, "leftIcon">>) => {
   const [spacerWidth, setSpacerWidth] = useState(0);
 
   const onLayout = useCallback(
@@ -34,7 +34,7 @@ const ButtonWithLeftIcon = ({
 
   return (
     <Button {...props} unstyled={true} alignItems={"center"} flexDirection={"row"}>
-      <YStack padding={"$button-lg"} onLayout={onLayout}>
+      <YStack padding={"$sm"} onLayout={onLayout}>
         {leftIcon}
       </YStack>
       <YStack flex={1} alignItems={"center"}>
@@ -49,7 +49,7 @@ const ButtonWithRightIcon = ({
   children,
   rightIcon,
   ...props
-}: GenericButtonProps & Required<Pick<GenericButtonProps, "rightIcon">>) => {
+}: BaseButtonProps & Required<Pick<BaseButtonProps, "rightIcon">>) => {
   const [spacerWidth, setSpacerWidth] = useState(0);
 
   const onLayout = useCallback(
@@ -64,7 +64,7 @@ const ButtonWithRightIcon = ({
       <YStack flex={1} alignItems={"center"}>
         {children}
       </YStack>
-      <YStack padding={"$button-lg"} onLayout={onLayout}>
+      <YStack padding={"$sm"} onLayout={onLayout}>
         {rightIcon}
       </YStack>
     </Button>
@@ -76,23 +76,23 @@ const ButtonWithTwoIcons = ({
   rightIcon,
   leftIcon,
   ...props
-}: GenericButtonProps &
-  Required<Pick<GenericButtonProps, "leftIcon" | "rightIcon">>) => (
+}: BaseButtonProps &
+  Required<Pick<BaseButtonProps, "leftIcon" | "rightIcon">>) => (
   <Button {...props} unstyled={true} alignItems={"center"} flexDirection={"row"}>
-    <YStack padding={"$button-lg"}>{leftIcon}</YStack>
+    <YStack padding={"$sm"}>{leftIcon}</YStack>
     <YStack flex={1} alignItems={"center"}>
       {children}
     </YStack>
-    <YStack padding={"$button-lg"}>{rightIcon}</YStack>
+    <YStack padding={"$sm"}>{rightIcon}</YStack>
   </Button>
 );
 
-const GenericButton = ({
+const BaseButton = ({
   children,
   leftIcon,
   rightIcon,
   ...props
-}: GenericButtonProps) => {
+}: BaseButtonProps) => {
   if (leftIcon && rightIcon) {
     return (
       <ButtonWithTwoIcons {...props} leftIcon={leftIcon} rightIcon={rightIcon}>
@@ -120,5 +120,5 @@ const GenericButton = ({
   return <ButtonWithoutIcons {...props}>{children}</ButtonWithoutIcons>;
 };
 
-export type { GenericButtonProps };
-export { GenericButton };
+export type { BaseButtonProps };
+export { BaseButton };

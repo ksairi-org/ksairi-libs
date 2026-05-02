@@ -1,15 +1,16 @@
 import type { BaseButtonProps } from "../BaseButton/BaseButton";
 import { BaseButton } from "../BaseButton";
 
-type BasicButtonProps = BaseButtonProps;
+type GhostButtonProps = BaseButtonProps;
 
-const BasicButton = ({ disabled, ...props }: BasicButtonProps) => (
+const GhostButton = ({ disabled, ...props }: GhostButtonProps) => (
   <BaseButton
     {...props}
     disabled={disabled}
     opacity={disabled ? 0.4 : props.opacity}
+    backgroundColor="transparent"
   />
 );
 
-export { BasicButton };
-export type { BasicButtonProps };
+export { GhostButton };
+export type { GhostButtonProps };

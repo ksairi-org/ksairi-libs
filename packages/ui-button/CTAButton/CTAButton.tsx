@@ -1,20 +1,24 @@
-import { ActivityIndicator } from "react-native";
+import { Spinner, type ColorTokens } from "tamagui";
 
-import type { GenericButtonProps } from "../GenericButton/GenericButton";
-import { GenericButton } from "../GenericButton";
+import type { BaseButtonProps } from "../BaseButton/BaseButton";
+import { BaseButton } from "../BaseButton";
 
-type CTAButtonProps = GenericButtonProps & { loading?: boolean };
+type CTAButtonProps = BaseButtonProps & {
+  loading?: boolean;
+  spinnerColor?: ColorTokens;
+};
 
 const CTAButton = ({
   children,
   disabled,
   loading,
+  spinnerColor,
   width,
   borderRadius,
   padding,
   ...props
 }: CTAButtonProps) => (
-  <GenericButton
+  <BaseButton
     {...props}
     disabled={disabled}
     opacity={disabled ? 0.4 : props.opacity}
@@ -22,8 +26,8 @@ const CTAButton = ({
     borderRadius={borderRadius ?? "$radius.xl"}
     padding={padding ?? "$md"}
   >
-    {loading ? <ActivityIndicator size={"small"} /> : children}
-  </GenericButton>
+    {loading ? <Spinner color={spinnerColor} /> : children}
+  </BaseButton>
 );
 
 export { CTAButton };

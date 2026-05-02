@@ -1,7 +1,5 @@
 import { useEffect } from "react";
 
-import { StyleSheet } from "react-native";
-
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
@@ -12,13 +10,6 @@ import Animated, {
 import type { ColorTokens, Token } from "tamagui";
 
 import { Circle } from "./Circle";
-
-const styles = StyleSheet.create({
-  centralize: {
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});
 
 type CircularLoadingSpinnerProps = {
   size: Token;
@@ -64,7 +55,7 @@ const CircularLoadingSpinner = ({
   }));
 
   return (
-    <Animated.View style={[styles.centralize, spinnerStyle]}>
+    <Animated.View style={[{ justifyContent: "center", alignItems: "center" }, spinnerStyle]}>
       <Circle
         size={size}
         thickness={thickness}
