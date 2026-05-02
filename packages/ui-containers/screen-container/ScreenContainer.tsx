@@ -1,13 +1,13 @@
 import type { YStackProps } from "tamagui";
 import { useState, useCallback } from "react";
 import type { LayoutChangeEvent } from "react-native";
-import { useWindowDimensions } from "react-native";
-import { YStack, ScrollView } from "tamagui";
+import { useWindowDimensions, ScrollView } from "react-native";
+import { YStack } from "tamagui";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import type { Edge } from "react-native-safe-area-context";
 
 type ScreenContainerProps = Pick<YStackProps, "children"> & {
-  backgroundColor?: YStackProps["backgroundColor"];
+  backgroundColor?: string;
   shouldAutoResize?: boolean;
   edges?: Edge[];
 };
@@ -36,12 +36,7 @@ const ScreenContainer = ({
   if (!shouldAutoResize) {
     return (
       <YStack
-        backgroundColor={backgroundColor}
-        flexGrow={1}
-        paddingTop={pt}
-        paddingBottom={pb}
-        paddingLeft={pl}
-        paddingRight={pr}
+        style={{ flexGrow: 1, backgroundColor, paddingTop: pt, paddingBottom: pb, paddingLeft: pl, paddingRight: pr }}
       >
         {children}
       </YStack>
@@ -51,12 +46,8 @@ const ScreenContainer = ({
   if (contentHeight === null) {
     return (
       <YStack
-        backgroundColor={backgroundColor}
-        paddingTop={pt}
-        paddingBottom={pb}
-        paddingLeft={pl}
-        paddingRight={pr}
         onLayout={handleLayout}
+        style={{ backgroundColor, paddingTop: pt, paddingBottom: pb, paddingLeft: pl, paddingRight: pr }}
       >
         {children}
       </YStack>
@@ -66,8 +57,7 @@ const ScreenContainer = ({
   if (contentHeight > screenHeight) {
     return (
       <ScrollView
-        backgroundColor={backgroundColor}
-        flexGrow={1}
+        style={{ flexGrow: 1, backgroundColor }}
         contentContainerStyle={{ paddingTop: pt, paddingBottom: pb, paddingLeft: pl, paddingRight: pr }}
       >
         {children}
@@ -77,12 +67,7 @@ const ScreenContainer = ({
 
   return (
     <YStack
-      backgroundColor={backgroundColor}
-      flexGrow={1}
-      paddingTop={pt}
-      paddingBottom={pb}
-      paddingLeft={pl}
-      paddingRight={pr}
+      style={{ flexGrow: 1, backgroundColor, paddingTop: pt, paddingBottom: pb, paddingLeft: pl, paddingRight: pr }}
     >
       {children}
     </YStack>

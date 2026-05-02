@@ -13,8 +13,7 @@ type IconButtonProps = Omit<
 const IconButton = ({ disabled, icon, pressStyle, ...props }: IconButtonProps) => (
   <Button
     unstyled={true}
-    borderRadius={"$full"}
-    padding={"$sm"}
+    style={{ borderRadius: 9999, padding: 8 }}
     pressStyle={pressStyle ?? { opacity: 0.7 }}
     {...props}
     disabled={disabled}

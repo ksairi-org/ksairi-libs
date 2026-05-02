@@ -9,9 +9,9 @@ import Animated, {
   withSpring,
   withTiming,
 } from "react-native-reanimated";
-import { getTokenValue } from "tamagui";
 
 import { ThrottledButton } from "@ksairi-org/ui-touchables";
+import { useColorTokenValue } from "@ksairi-org/react-native-ui-config";
 import { CircularLoadingSpinner } from "../CircularLoadingSpinner";
 
 type AnimatedButtonProps = {
@@ -47,6 +47,7 @@ const AnimatedButton = ({
   style,
   children,
 }: AnimatedButtonProps) => {
+  const resolvedBackgroundColor = useColorTokenValue(backgroundColor);
   const scale = useSharedValue(1);
   const buttonWidth = useSharedValue(width);
   const buttonOpacity = useSharedValue(opacity ?? (disabled ? 0.1 : 1));
@@ -72,12 +73,8 @@ const AnimatedButton = ({
   return (
     <Animated.View style={[animateButtonStyle, style]}>
       <ThrottledButton
-        br={"$full"}
-        justify={"center"}
-        items={"center"}
-        backgroundColor={backgroundColor}
+        style={{ borderRadius: 9999, justifyContent: "center", alignItems: "center", padding: padding, backgroundColor: resolvedBackgroundColor }}
         height={height}
-        p={padding && getTokenValue(padding)}
         disabled={disabled}
         onPress={onPress}
         onPressIn={() => {
@@ -90,7 +87,7 @@ const AnimatedButton = ({
       >
         {loading ? (
           <CircularLoadingSpinner
-            size={"$2xl"}
+            size={32}
             backgroundColor={spinnerBackgroundColor ?? backgroundColor}
             spinningPieceColor={spinnerPieceColor ?? backgroundColor}
           />

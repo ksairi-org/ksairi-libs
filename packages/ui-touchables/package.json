@@ -1,6 +1,6 @@
 {
   "name": "@ksairi-org/ui-touchables",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Touchable components — part of @ksairi-org/* libs",
   "main": "./index.ts",
   "types": "./index.ts",

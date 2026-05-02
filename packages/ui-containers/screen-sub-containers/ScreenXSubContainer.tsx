@@ -2,20 +2,16 @@ import type { XStackProps } from 'tamagui';
 
 import { XStack } from 'tamagui';
 
-type ScreenSubXContainerProps = Omit<XStackProps, 'paddingHorizontal'>;
+type ScreenSubXContainerProps = XStackProps & {
+  horizontalPadding?: number;
+};
 
-/**
- *
- * @param props props
- * @param props.children content to show within the container
- * @param props.backgroundColor container's background color
- * @returns JSX container containing its children
- */
 const ScreenXSubContainer = ({
   children,
+  horizontalPadding = 16,
   ...props
 }: ScreenSubXContainerProps) => (
-  <XStack {...props} px={'$md'}>
+  <XStack style={{ paddingHorizontal: horizontalPadding }} {...props}>
     {children}
   </XStack>
 );

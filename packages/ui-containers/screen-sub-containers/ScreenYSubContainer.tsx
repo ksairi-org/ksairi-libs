@@ -2,20 +2,16 @@ import type { YStackProps } from 'tamagui';
 
 import { YStack } from 'tamagui';
 
-type ScreenSubYContainerProps = Omit<YStackProps, 'paddingHorizontal'>;
+type ScreenSubYContainerProps = YStackProps & {
+  horizontalPadding?: number;
+};
 
-/**
- *
- * @param props props
- * @param props.children content to show within the container
- * @param props.backgroundColor container's background color
- * @returns JSX container containing its children
- */
 const ScreenYSubContainer = ({
   children,
+  horizontalPadding = 16,
   ...props
 }: ScreenSubYContainerProps) => (
-  <YStack {...props} px={'$md'}>
+  <YStack style={{ paddingHorizontal: horizontalPadding }} {...props}>
     {children}
   </YStack>
 );

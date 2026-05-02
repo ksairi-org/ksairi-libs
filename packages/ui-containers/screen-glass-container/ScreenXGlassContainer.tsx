@@ -7,12 +7,16 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import type { Edge } from "react-native-safe-area-context";
 
 type ScreenXGlassContainerProps = Pick<YStackProps, "children"> & {
-  backgroundColor?: YStackProps["backgroundColor"];
+  backgroundColor?: string;
   shouldAutoResize?: boolean;
   edges?: Edge[];
 } & GlassContainerProps;
 
-type VerticalGlassContainerProps = Omit<YStackProps, "flexDirection">;
+type HorizontalGlassContainerProps = {
+  children?: React.ReactNode;
+  style?: import("react-native").StyleProp<import("react-native").ViewStyle>;
+  onLayout?: (event: LayoutChangeEvent) => void;
+};
 
 const StyledGlassContainer = styled(GlassContainer);
 const validGlassComponents = [
@@ -44,9 +48,9 @@ const validateGlassViewChildren = (children: React.ReactNode) => {
   });
 };
 
-const HorizontalGlassContainer = (props: VerticalGlassContainerProps) => (
-  <StyledGlassContainer flexDirection="row" {...props}>
-    {props.children}
+const HorizontalGlassContainer = ({ children, style, onLayout }: HorizontalGlassContainerProps) => (
+  <StyledGlassContainer flexDirection="row" style={style} onLayout={onLayout}>
+    {children}
   </StyledGlassContainer>
 );
 
@@ -57,7 +61,6 @@ const ScreenXGlassContainer = ({
   shouldAutoResize = true,
   backgroundColor,
   edges = ALL_EDGES,
-  ...props
 }: ScreenXGlassContainerProps) => {
   const [contentHeight, setContentHeight] = useState<null | number>(null);
   const screenHeight = useWindowDimensions().height;
@@ -77,13 +80,7 @@ const ScreenXGlassContainer = ({
   if (!shouldAutoResize) {
     return (
       <HorizontalGlassContainer
-        backgroundColor={backgroundColor}
-        flexGrow={1}
-        pt={pt}
-        pb={pb}
-        pl={pl}
-        pr={pr}
-        {...props}
+        style={{ flexGrow: 1, backgroundColor, paddingTop: pt, paddingBottom: pb, paddingLeft: pl, paddingRight: pr }}
       >
         {children}
       </HorizontalGlassContainer>
@@ -93,13 +90,8 @@ const ScreenXGlassContainer = ({
   if (contentHeight === null) {
     return (
       <HorizontalGlassContainer
-        backgroundColor={backgroundColor}
-        pt={pt}
-        pb={pb}
-        pl={pl}
-        pr={pr}
+        style={{ backgroundColor, paddingTop: pt, paddingBottom: pb, paddingLeft: pl, paddingRight: pr }}
         onLayout={handleLayout}
-        {...props}
       >
         {children}
       </HorizontalGlassContainer>
@@ -113,20 +105,14 @@ const ScreenXGlassContainer = ({
         horizontal
         contentContainerStyle={{ paddingTop: pt, paddingBottom: pb, paddingLeft: pl, paddingRight: pr }}
       >
-        <HorizontalGlassContainer {...props}>{children}</HorizontalGlassContainer>
+        <HorizontalGlassContainer>{children}</HorizontalGlassContainer>
       </ScrollView>
     );
   }
 
   return (
     <HorizontalGlassContainer
-      backgroundColor={backgroundColor}
-      flexGrow={1}
-      pt={pt}
-      pb={pb}
-      pl={pl}
-      pr={pr}
-      {...props}
+      style={{ flexGrow: 1, backgroundColor, paddingTop: pt, paddingBottom: pb, paddingLeft: pl, paddingRight: pr }}
     >
       {children}
     </HorizontalGlassContainer>

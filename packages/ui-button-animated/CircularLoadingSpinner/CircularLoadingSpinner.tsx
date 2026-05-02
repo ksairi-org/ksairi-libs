@@ -12,7 +12,7 @@ import type { ColorTokens } from "tamagui";
 import { Circle } from "./Circle";
 
 type CircularLoadingSpinnerProps = {
-  size: string;
+  size: number;
   thickness?: number;
   backgroundColor: ColorTokens;
   spinningPieceColor: ColorTokens;
