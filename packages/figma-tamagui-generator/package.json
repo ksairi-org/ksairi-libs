@@ -1,6 +1,6 @@
 {
   "name": "@ksairi-org/figma-tamagui-generator",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Generate Tamagui design tokens from a Figma file — part of @ksairi-org/* libs",
   "main": "./index.ts",
   "types": "./index.ts",

@@ -1,6 +1,6 @@
 {
   "name": "@ksairi-org/react-form",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Form component wrapper — part of @ksairi-org/* libs",
   "main": "./index.ts",
   "types": "./index.ts",
