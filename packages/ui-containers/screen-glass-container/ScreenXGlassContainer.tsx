@@ -100,12 +100,12 @@ const ScreenXGlassContainer = ({
 
   if (contentHeight > screenHeight) {
     return (
-      <ScrollView
-        style={{ flexGrow: 1 }}
-        horizontal
-        contentContainerStyle={{ paddingTop: pt, paddingBottom: pb, paddingLeft: pl, paddingRight: pr }}
-      >
-        <HorizontalGlassContainer>{children}</HorizontalGlassContainer>
+      <ScrollView style={{ flexGrow: 1 }} horizontal>
+        <HorizontalGlassContainer
+          style={{ paddingTop: pt, paddingBottom: pb, paddingLeft: pl, paddingRight: pr }}
+        >
+          {children}
+        </HorizontalGlassContainer>
       </ScrollView>
     );
   }

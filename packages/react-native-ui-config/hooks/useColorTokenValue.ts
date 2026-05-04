@@ -9,10 +9,8 @@ import { useTheme } from 'tamagui';
 const useColorTokenValue = (color: ColorTokens | undefined): string => {
   const theme = useTheme();
 
-  return !color || !theme[color as ThemeKeys]?.val
-    ? 'black'
-    : // @ts-expect-error — `.val` exists at runtime but isn't in the mapped type
-      theme[color as ThemeKeys].val;
+  const token = color ? theme[color as ThemeKeys] : undefined;
+  return token?.val ?? 'black';
 };
 
 export { useColorTokenValue };

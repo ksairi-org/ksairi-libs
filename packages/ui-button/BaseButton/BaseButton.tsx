@@ -15,7 +15,7 @@ type BaseButtonProps = Omit<
 
 const ButtonWithoutIcons = ({ children, ...props }: BaseButtonProps) => (
   <Button {...props} unstyled={true}>
-    <YStack alignItems="center" flex={1}>
+    <YStack style={{ alignItems: "center", flex: 1 }}>
       {children}
     </YStack>
   </Button>
@@ -36,11 +36,11 @@ const ButtonWithLeftIcon = ({
 
   return (
     <Button {...props} unstyled={true}>
-      <XStack alignItems="center" flex={1}>
-        <YStack padding={8} onLayout={onLayout}>
+      <XStack style={{ alignItems: "center", flex: 1 }}>
+        <YStack style={{ padding: 8 }} onLayout={onLayout}>
           {leftIcon}
         </YStack>
-        <YStack flex={1} alignItems="center">
+        <YStack style={{ flex: 1, alignItems: "center" }}>
           {children}
         </YStack>
         <Spacer width={spacerWidth} />
@@ -64,12 +64,12 @@ const ButtonWithRightIcon = ({
 
   return (
     <Button {...props} unstyled={true}>
-      <XStack alignItems="center" flex={1}>
+      <XStack style={{ alignItems: "center", flex: 1 }}>
         <Spacer width={spacerWidth} />
-        <YStack flex={1} alignItems="center">
+        <YStack style={{ flex: 1, alignItems: "center" }}>
           {children}
         </YStack>
-        <YStack padding={8} onLayout={onLayout}>
+        <YStack style={{ padding: 8 }} onLayout={onLayout}>
           {rightIcon}
         </YStack>
       </XStack>
@@ -85,10 +85,10 @@ const ButtonWithTwoIcons = ({
 }: BaseButtonProps &
   Required<Pick<BaseButtonProps, "leftIcon" | "rightIcon">>) => (
   <Button {...props} unstyled={true}>
-    <XStack alignItems="center" flex={1}>
-      <YStack padding={8}>{leftIcon}</YStack>
-      <YStack flex={1} alignItems="center">{children}</YStack>
-      <YStack padding={8}>{rightIcon}</YStack>
+    <XStack style={{ alignItems: "center", flex: 1 }}>
+      <YStack style={{ padding: 8 }}>{leftIcon}</YStack>
+      <YStack style={{ flex: 1, alignItems: "center" }}>{children}</YStack>
+      <YStack style={{ padding: 8 }}>{rightIcon}</YStack>
     </XStack>
   </Button>
 );

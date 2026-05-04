@@ -1,6 +1,6 @@
 {
   "name": "@ksairi-org/react-native-ui-config",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "UI config hooks and utilities — part of @ksairi-org/* libs",
   "main": "./index.ts",
   "types": "./index.ts",

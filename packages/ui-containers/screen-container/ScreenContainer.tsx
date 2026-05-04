@@ -56,11 +56,10 @@ const ScreenContainer = ({
 
   if (contentHeight > screenHeight) {
     return (
-      <ScrollView
-        style={{ flexGrow: 1, backgroundColor }}
-        contentContainerStyle={{ paddingTop: pt, paddingBottom: pb, paddingLeft: pl, paddingRight: pr }}
-      >
-        {children}
+      <ScrollView style={{ flexGrow: 1, backgroundColor }}>
+        <YStack style={{ paddingTop: pt, paddingBottom: pb, paddingLeft: pl, paddingRight: pr }}>
+          {children}
+        </YStack>
       </ScrollView>
     );
   }

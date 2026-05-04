@@ -100,11 +100,12 @@ const ScreenYGlassContainer = ({
 
   if (contentHeight > screenHeight) {
     return (
-      <ScrollView
-        style={{ flexGrow: 1 }}
-        contentContainerStyle={{ paddingTop: pt, paddingBottom: pb, paddingLeft: pl, paddingRight: pr }}
-      >
-        <VerticalGlassContainer>{children}</VerticalGlassContainer>
+      <ScrollView style={{ flexGrow: 1 }}>
+        <VerticalGlassContainer
+          style={{ paddingTop: pt, paddingBottom: pb, paddingLeft: pl, paddingRight: pr }}
+        >
+          {children}
+        </VerticalGlassContainer>
       </ScrollView>
     );
   }
