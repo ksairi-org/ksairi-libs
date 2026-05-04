@@ -7,7 +7,7 @@ import type {
   ComponentCollection,
 } from '../figma/types';
 
-import { isRGBA, hasRelationship, isNumber } from '../figma/types';
+import { isRGBA, hasRelationship } from '../figma/types';
 import { getVariablesFromFigmaFileId } from '../figma/client';
 
 const DEFAULT_COLOR = 'rgba(0,255,255,1)';

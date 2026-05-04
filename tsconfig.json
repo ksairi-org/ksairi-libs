@@ -1,0 +1,27 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "module": "esnext",
+    "noEmit": true,
+    "lib": ["es2020", "dom"]
+  },
+  "include": [
+    "packages/typescript-functions/**/*.ts",
+    "packages/react-hooks/**/*.ts",
+    "packages/react-hooks/**/*.tsx",
+    "packages/ui-button/**/*.ts",
+    "packages/ui-button/**/*.tsx",
+    "packages/ui-button-animated/**/*.ts",
+    "packages/ui-button-animated/**/*.tsx",
+    "packages/ui-touchables/**/*.ts",
+    "packages/ui-touchables/**/*.tsx",
+    "packages/ui-action-buttons/**/*.ts",
+    "packages/ui-action-buttons/**/*.tsx",
+    "packages/ui-containers/**/*.ts",
+    "packages/ui-containers/**/*.tsx",
+    "packages/react-native-functions/**/*.ts",
+    "packages/react-native-ui-config/**/*.ts",
+    "packages/react-native-ui-config/**/*.tsx"
+  ],
+  "exclude": ["**/node_modules", "**/*.test.*", "**/dist"]
+}

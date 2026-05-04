@@ -1,7 +1,7 @@
 import { useState, useCallback, Children, isValidElement } from "react";
-import type { LayoutChangeEvent } from "react-native";
-import { ScrollView, useWindowDimensions } from "react-native";
-import { styled, YStackProps } from "tamagui";
+import type { LayoutChangeEvent, StyleProp, ViewStyle } from "react-native";
+import { useWindowDimensions } from "react-native";
+import { styled, YStackProps, ScrollView } from "tamagui";
 import { GlassContainer, GlassContainerProps } from "expo-glass-effect";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import type { Edge } from "react-native-safe-area-context";
@@ -14,7 +14,7 @@ type YGlassContainerProps = Pick<YStackProps, "children"> & {
 
 type VerticalGlassContainerProps = {
   children?: React.ReactNode;
-  style?: import("react-native").StyleProp<import("react-native").ViewStyle>;
+  style?: StyleProp<ViewStyle>;
   onLayout?: (event: LayoutChangeEvent) => void;
 };
 

@@ -20,10 +20,10 @@ const getVariablesFromFigmaFileId = async (
 
   const filteredCollections = Object.entries(
     data.meta.variableCollections,
-  ).filter(([, v]: [string, any]) => v.remote === false);
+  ).filter(([, v]) => v.remote === false);
 
   const filteredVariables = Object.entries(data.meta.variables).filter(
-    ([, v]: [string, any]) => v.remote === false,
+    ([, v]) => v.remote === false,
   );
 
   return {

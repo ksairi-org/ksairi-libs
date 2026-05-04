@@ -24,7 +24,7 @@ const useAuthStore = createWithEqualityFn<AuthState>()(
         const wipedState = keys.reduce((acc, nextKey) => {
           // We want to wipe all tokens
           if (typeof state[nextKey] === "string") {
-            // @ts-ignore
+            // @ts-expect-error — key is narrowed from the generic state shape
             acc[nextKey] = "";
           }
 

@@ -73,7 +73,7 @@ const Form = <Schema extends RequiredSchema>({
           <Controller
             control={methods.control}
             name={currentChildName}
-            render={({ field: { name, onBlur, onChange, ...rest } }) => {
+            render={({ field: { onBlur, onChange, ...rest } }) => {
               // eslint-disable-next-line @typescript-eslint/no-explicit-any
               const handleOnBlur = (e: any) => {
                 child.props?.onBlur?.(e);

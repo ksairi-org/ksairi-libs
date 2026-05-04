@@ -2,10 +2,9 @@ import type { GetProps } from "tamagui";
 
 import type { ReactNode } from "react";
 
-import { TouchableWithoutFeedback } from "react-native";
-
 import { Image as ExpoImage } from "expo-image";
 import { styled } from "tamagui";
+import { BaseTouchable } from "@ksairi-org/ui-touchables";
 
 import DEFAULT_ERROR_IMAGE from "../files/try-again.jpg";
 
@@ -33,13 +32,13 @@ const Error = ({
   onRetryPress,
   ...styledImageProps
 }: ErrorProps) => (
-  <TouchableWithoutFeedback onPress={onRetryPress}>
+  <BaseTouchable onPress={onRetryPress}>
     {ErrorComponent ? (
       ErrorComponent
     ) : (
       <StyledImage source={source} {...styledImageProps} />
     )}
-  </TouchableWithoutFeedback>
+  </BaseTouchable>
 );
 
 export { Error };

@@ -45,10 +45,8 @@ const createObjectFromArray = <
       const nextValue =
         nextKey !== "true"
           ? values[currentIndex]
-          : // @ts-ignore
-            findValueClosestToNumber(values, DEFAULT_VALUE_FOR_TRUE);
+          : findValueClosestToNumber(values, DEFAULT_VALUE_FOR_TRUE);
 
-      // @ts-ignore
       acc[nextKey] = nextValue;
 
       return acc;

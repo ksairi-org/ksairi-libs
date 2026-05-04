@@ -108,11 +108,11 @@ const getRiveSource = (source: unknown): RiveSourceResult => {
 
 const SplashView = ({
   source,
-  alignment = Alignment.Center,
-  fit = Fit.Contain,
+  alignment: _alignment = Alignment.Center,
+  fit: _fit = Fit.Contain,
   animationViewStyle,
   fadeOutDuration = 1500,
-  children,
+  children: _children,
   launchScreenHideMs = 0,
   style,
   fadeOutDelay = 0,

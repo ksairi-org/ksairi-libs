@@ -2,9 +2,8 @@ import type { ReactNode } from "react";
 import { useCallback, useState } from "react";
 
 import type { LayoutChangeEvent } from "react-native";
-import { View } from "react-native";
 
-import { Button, type ButtonProps, Spacer } from "tamagui";
+import { Button, type ButtonProps, Spacer, XStack, YStack } from "tamagui";
 
 type BaseButtonProps = Omit<
   ButtonProps,
@@ -16,9 +15,9 @@ type BaseButtonProps = Omit<
 
 const ButtonWithoutIcons = ({ children, ...props }: BaseButtonProps) => (
   <Button {...props} unstyled={true}>
-    <View style={{ alignItems: "center", flex: 1 }}>
+    <YStack alignItems="center" flex={1}>
       {children}
-    </View>
+    </YStack>
   </Button>
 );
 
@@ -37,15 +36,15 @@ const ButtonWithLeftIcon = ({
 
   return (
     <Button {...props} unstyled={true}>
-      <View style={{ alignItems: "center", flexDirection: "row", flex: 1 }}>
-        <View style={{ padding: 8 }} onLayout={onLayout}>
+      <XStack alignItems="center" flex={1}>
+        <YStack padding={8} onLayout={onLayout}>
           {leftIcon}
-        </View>
-        <View style={{ flex: 1, alignItems: "center" }}>
+        </YStack>
+        <YStack flex={1} alignItems="center">
           {children}
-        </View>
+        </YStack>
         <Spacer width={spacerWidth} />
-      </View>
+      </XStack>
     </Button>
   );
 };
@@ -65,15 +64,15 @@ const ButtonWithRightIcon = ({
 
   return (
     <Button {...props} unstyled={true}>
-      <View style={{ alignItems: "center", flexDirection: "row", flex: 1 }}>
+      <XStack alignItems="center" flex={1}>
         <Spacer width={spacerWidth} />
-        <View style={{ flex: 1, alignItems: "center" }}>
+        <YStack flex={1} alignItems="center">
           {children}
-        </View>
-        <View style={{ padding: 8 }} onLayout={onLayout}>
+        </YStack>
+        <YStack padding={8} onLayout={onLayout}>
           {rightIcon}
-        </View>
-      </View>
+        </YStack>
+      </XStack>
     </Button>
   );
 };
@@ -86,11 +85,11 @@ const ButtonWithTwoIcons = ({
 }: BaseButtonProps &
   Required<Pick<BaseButtonProps, "leftIcon" | "rightIcon">>) => (
   <Button {...props} unstyled={true}>
-    <View style={{ alignItems: "center", flexDirection: "row", flex: 1 }}>
-      <View style={{ padding: 8 }}>{leftIcon}</View>
-      <View style={{ flex: 1, alignItems: "center" }}>{children}</View>
-      <View style={{ padding: 8 }}>{rightIcon}</View>
-    </View>
+    <XStack alignItems="center" flex={1}>
+      <YStack padding={8}>{leftIcon}</YStack>
+      <YStack flex={1} alignItems="center">{children}</YStack>
+      <YStack padding={8}>{rightIcon}</YStack>
+    </XStack>
   </Button>
 );
 

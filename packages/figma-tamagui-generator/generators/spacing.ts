@@ -18,7 +18,7 @@ const parseSpacingVariables = (
   spacingVariables: FileVariable[],
   allVariables: FileVariable[],
 ): RawSpaceToken => {
-  let spacingToken: RawSpaceToken = {};
+  const spacingToken: RawSpaceToken = {};
 
   for (const spacingVar of spacingVariables) {
     const name = spacingVar.name

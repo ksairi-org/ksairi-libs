@@ -1,8 +1,8 @@
 import type { YStackProps } from "tamagui";
 import { useState, useCallback } from "react";
 import type { LayoutChangeEvent } from "react-native";
-import { useWindowDimensions, ScrollView } from "react-native";
-import { YStack } from "tamagui";
+import { useWindowDimensions } from "react-native";
+import { YStack, ScrollView } from "tamagui";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import type { Edge } from "react-native-safe-area-context";
 

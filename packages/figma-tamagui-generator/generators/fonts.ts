@@ -45,7 +45,7 @@ const processNumericTokens = (
   modeId: string,
   defaultValue: number,
 ): NumericToken => {
-  let tokens: NumericToken = {};
+  const tokens: NumericToken = {};
 
   for (const fontVar of fontVariables) {
     let value = fontVar.valuesByMode[modeId];

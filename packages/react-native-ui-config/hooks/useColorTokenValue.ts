@@ -11,7 +11,7 @@ const useColorTokenValue = (color: ColorTokens | undefined): string => {
 
   return !color || !theme[color as ThemeKeys]?.val
     ? 'black'
-    : // @ts-ignore
+    : // @ts-expect-error — `.val` exists at runtime but isn't in the mapped type
       theme[color as ThemeKeys].val;
 };
 
